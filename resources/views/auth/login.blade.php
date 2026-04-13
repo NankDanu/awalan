@@ -91,7 +91,7 @@
                 </div>
 
                 <!-- Login Form -->
-                <form action="{{ route('login') }}" method="POST" class="space-y-4">
+                <form action="{{ route('login.submit') }}" method="POST" class="space-y-4">
                     @csrf
 
                     <!-- Email/Username Field -->

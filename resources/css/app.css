@@ -241,4 +241,113 @@
     .chip-compact {
         @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold;
     }
+
+    .docmost-body {
+        @apply bg-slate-100 text-slate-800;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .docmost-shell {
+        @apply min-h-screen lg:h-screen lg:overflow-hidden lg:flex;
+        background-image: radial-gradient(circle at 8% 6%, rgba(16, 185, 129, 0.14) 0, rgba(16, 185, 129, 0) 40%), radial-gradient(circle at 96% 0%, rgba(234, 179, 8, 0.12) 0, rgba(234, 179, 8, 0) 30%);
+    }
+
+    .docmost-sidebar {
+        @apply fixed lg:static inset-y-0 left-0 z-30 w-[280px] border-r border-slate-200 bg-slate-50 flex flex-col;
+    }
+
+    .docmost-brand {
+        @apply h-14 px-4 border-b border-slate-200 flex items-center justify-between;
+    }
+
+    .docmost-dot {
+        @apply inline-block h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-sm;
+    }
+
+    .docmost-logo {
+        @apply text-lg font-extrabold tracking-tight text-slate-900;
+    }
+
+    .docmost-workspace-btn {
+        @apply w-full inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100;
+    }
+
+    .docmost-group {
+        @apply pt-2;
+    }
+
+    .docmost-group-toggle {
+        @apply w-full flex items-center justify-between rounded-md px-3 py-1.5 hover:bg-slate-100;
+    }
+
+    .docmost-group-title {
+        @apply px-3 pb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-500;
+    }
+
+    .docmost-sidebar-link {
+        @apply flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-100;
+    }
+
+    .docmost-sidebar-link.is-active {
+        @apply bg-slate-200;
+    }
+
+    .docmost-main {
+        @apply flex-1 min-w-0 flex flex-col;
+    }
+
+    .docmost-topbar {
+        @apply h-14 border-b border-slate-200 bg-white px-4 lg:px-6 flex items-center justify-between sticky top-0 z-10;
+    }
+
+    .docmost-title {
+        @apply text-base font-bold text-slate-900;
+    }
+
+    .docmost-action-btn {
+        @apply hidden sm:inline-flex items-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100;
+    }
+
+    .docmost-action-btn-active {
+        @apply border-emerald-200 bg-emerald-50 text-emerald-700;
+    }
+
+    .docmost-avatar-btn {
+        @apply inline-flex h-8 w-8 items-center justify-center rounded-full bg-rose-500;
+    }
+
+    .docmost-menu-item {
+        @apply block w-full px-3 py-2 text-left text-xs text-slate-700 hover:bg-slate-50;
+    }
+
+    .docmost-content-wrap {
+        @apply flex-1 min-h-0 lg:grid lg:grid-cols-[minmax(0,1fr)_320px];
+    }
+
+    .docmost-content {
+        @apply overflow-y-auto p-3 sm:p-4 lg:p-6;
+    }
+
+    .docmost-document {
+        @apply max-w-4xl rounded-2xl border border-slate-200 bg-white px-5 py-5 sm:px-8 sm:py-7 shadow-sm;
+    }
+
+    .docmost-comments {
+        @apply border-l border-slate-200 bg-slate-50 flex-col p-4 overflow-y-auto;
+    }
+
+    .docmost-comments-head {
+        @apply text-sm font-bold text-slate-900 mb-3;
+    }
+
+    .docmost-comment-card {
+        @apply rounded-xl border border-slate-200 bg-white p-3;
+    }
+}
+
+@media (max-width: 1023px) {
+    .docmost-sidebar {
+        width: 85vw;
+        max-width: 300px;
+    }
 }

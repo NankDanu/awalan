@@ -1,17 +1,17 @@
 @props(['href', 'active' => false, 'icon' => 'default'])
 
 @php
-$baseClasses = 'flex items-center rounded-lg transition-colors';
+$baseClasses = 'docmost-sidebar-link transition-colors';
 $classes = $active 
-    ? $baseClasses . ' px-3 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700' 
-    : $baseClasses . ' px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100';
+    ? $baseClasses . ' is-active' 
+    : $baseClasses;
 
 $iconColors = [
-    'home' => 'text-blue-600',
-    'users' => 'text-green-600',
-    'shield' => 'text-purple-600',
-    'settings' => 'text-orange-600',
-    'default' => 'text-gray-600',
+    'home' => 'text-slate-600',
+    'users' => 'text-slate-600',
+    'shield' => 'text-slate-600',
+    'settings' => 'text-slate-600',
+    'default' => 'text-slate-500',
 ];
 
 $icons = [
@@ -24,17 +24,18 @@ $icons = [
 
 $iconPath = $icons[$icon] ?? $icons['default'];
 $iconColor = $iconColors[$icon] ?? $iconColors['default'];
-$iconColorActive = $active ? 'text-white' : $iconColor;
+$iconColorActive = $active ? 'text-slate-900' : $iconColor;
+$labelClass = $active ? 'text-slate-900' : 'text-slate-600';
 @endphp
 
 <a href="{{ $href }}" 
    :title="sidebarCollapsed ? '{{ $slot }}' : ''"
    class="group {{ $classes }}"
    :class="sidebarCollapsed ? 'justify-center gap-0' : 'gap-3'">
-    <svg class="flex-shrink-0 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="flex-shrink-0 h-4 w-4 {{ $iconColorActive }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         {!! $iconPath !!}
     </svg>
-    <span class="text-gray-900 @if($active) text-white @endif"
+        <span class="{{ $labelClass }}"
           x-cloak
           x-show="!sidebarCollapsed">
         {{ $slot }}
