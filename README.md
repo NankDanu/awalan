@@ -1,11 +1,10 @@
 # AWALAN
 
-[![Laravel](https://img.shields.io/badge/Laravel-11-red.svg)](https://laravel.com)
+[![Laravel](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-38bdf8.svg)](https://tailwindcss.com)
 
-AWALAN adalah `Laravel 11 boilerplate` untuk kebutuhan admin panel dan starter kit project baru. Repo ini disiapkan sebagai baseline aplikasi dengan autentikasi, otorisasi berbasis role-permission, user management, menu management, company settings, serta pola arsitektur service layer supaya tim bisa langsung lanjut ke fitur bisnis.
-
+AWALAN adalah `Laravel 12 boilerplate` untuk kebutuhan admin panel dan starter kit project baru. Repo ini disiapkan sebagai baseline aplikasi dengan autentikasi, otorisasi berbasis role-permission, user management, menu management, company settings, serta pola arsitektur service layer supaya tim bisa langsung lanjut ke fitur bisnis.
 
 ### Dasbor
 
@@ -19,14 +18,13 @@ AWALAN adalah `Laravel 11 boilerplate` untuk kebutuhan admin panel dan starter k
 
 ![Preview Pengaturan Perusahaan](public/images/apps_perusahaan.png)
 
-
 ## Tech Stack
 
 | Area | Stack |
 |------|-------|
-| Backend | PHP 8.2+, Laravel 11 |
-| Frontend | Blade, Tailwind CSS 3, Vite 5, Axios |
-| UI Utility | KTUI |
+| Backend | PHP 8.2+, Laravel 12 |
+| Frontend | Blade, Tailwind CSS 3, Vite 6, Axios |
+| UI Utility | KTUI, Tabler Icons |
 | Authentication | Laravel Sanctum |
 | Authorization | Spatie Laravel Permission |
 | Database | MySQL 8.0+ |
@@ -45,9 +43,9 @@ AWALAN adalah `Laravel 11 boilerplate` untuk kebutuhan admin panel dan starter k
 - Permission management
 - Company settings
 - Dynamic menu structure
+- Modul contoh `Catat` (client/workspace/node)
 
 Modul-modul ini bisa dipakai sebagai referensi implementasi sekaligus titik start buat nambah fitur baru.
-
 
 ## Quick Start
 
@@ -147,7 +145,6 @@ Hal yang biasanya dilakukan setelah clone boilerplate ini:
 2. Cek modul bawaan mana yang mau dipakai, mana yang mau dibuang.
 3. Tambahkan migration dan service baru sesuai domain bisnis utama project.
 4. Sesuaikan menu, permission, dan seed data biar match sama kebutuhan aplikasi.
-
 
 ## Development
 

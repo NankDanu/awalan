@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/catat/node-tree.js',
+                'resources/js/catat/markdown-editor.js',
             ],
             refresh: true,
         }),

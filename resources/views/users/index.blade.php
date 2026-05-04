@@ -1,24 +1,21 @@
-<x-layouts.admin :title="'Manajemen Pengguna'" :pageTitle="'Pengguna'">
+<x-layouts.admin :title="'Manajemen Pengguna'" :pageTitle="'Daftar Pengguna'" :showComments="false">
+    <x-slot:toolbarActions>
+        @can('create-users')
+            <a href="{{ route('users.create') }}" class="kt-btn">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                Tambah Pengguna
+            </a>
+        @endcan
+    </x-slot:toolbarActions>
+
     <div class="grid w-full space-y-5">
-        <div>
-            <h2 class="text-lg font-semibold text-foreground">Daftar Pengguna</h2>
-        </div>
 
         <div class="kt-card">
             <div class="kt-card-header min-h-16">
                 <div class="flex w-full flex-wrap items-center justify-between gap-3">
                     <div id="users-search" class="flex-1 min-w-[220px]"></div>
-
-                    <div class="flex items-center gap-2">
-                        @can('create-users')
-                            <a href="{{ route('users.create') }}" class="kt-btn">
-                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                                </svg>
-                                Tambah Pengguna
-                            </a>
-                        @endcan
-                    </div>
                 </div>
             </div>
 

@@ -329,5 +329,5 @@ Route::resource('company-settings', CompanySettingController::class)
 ---
 
 **Created:** February 6, 2026  
-**Version:** 1.0  
+**Version:** 1.1 (aligned with AWALAN Laravel 12 stack)  
 **Status:** Production Ready

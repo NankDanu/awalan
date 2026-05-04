@@ -1,4 +1,13 @@
-<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'">
+<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showComments="false">
+    <x-slot:toolbarActions>
+        <button type="submit" form="company-settings-index-form" class="btn-compact btn-primary">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            {{ $isNew ? 'Simpan Pengaturan' : 'Perbarui Pengaturan' }}
+        </button>
+    </x-slot:toolbarActions>
+
     <div class="space-y-4">
         <!-- Alert Messages -->
         @if (session('success'))
@@ -25,7 +34,7 @@
         @endif
 
         <!-- Form -->
-        <form method="POST" 
+          <form id="company-settings-index-form" method="POST" 
               action="{{ $isNew ? route('company-settings.store') : route('company-settings.update') }}" 
               enctype="multipart/form-data" 
               class="bg-white shadow rounded-lg p-6">
@@ -50,7 +59,8 @@
                             name="company_name"
                             value="{{ old('company_name', $setting->company_name) }}"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('company_name') border-red-500 @enderror"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            style="border-color: {{ $errors->has('company_name') ? '#ef4444' : '#d1d5db' }}"
                             placeholder="Masukkan nama perusahaan"
                         >
                         @error('company_name')
@@ -68,7 +78,8 @@
                             id="website"
                             name="website"
                             value="{{ old('website', $setting->website) }}"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('website') border-red-500 @enderror"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            style="border-color: {{ $errors->has('website') ? '#ef4444' : '#d1d5db' }}"
                             placeholder="https://example.com"
                         >
                         @error('website')
@@ -86,7 +97,8 @@
                             id="email"
                             name="email"
                             value="{{ old('email', $setting->email) }}"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('email') border-red-500 @enderror"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            style="border-color: {{ $errors->has('email') ? '#ef4444' : '#d1d5db' }}"
                             placeholder="email@perusahaan.com"
                         >
                         @error('email')
@@ -104,7 +116,8 @@
                             id="phone"
                             name="phone"
                             value="{{ old('phone', $setting->phone) }}"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('phone') border-red-500 @enderror"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            style="border-color: {{ $errors->has('phone') ? '#ef4444' : '#d1d5db' }}"
                             placeholder="+62 XXX XXX XXXX"
                         >
                         @error('phone')
@@ -122,7 +135,8 @@
                         id="address"
                         name="address"
                         rows="3"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('address') border-red-500 @enderror"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        style="border-color: {{ $errors->has('address') ? '#ef4444' : '#d1d5db' }}"
                         placeholder="Masukkan alamat perusahaan"
                     >{{ old('address', $setting->address) }}</textarea>
                     @error('address')
@@ -139,7 +153,8 @@
                         id="description"
                         name="description"
                         rows="4"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('description') border-red-500 @enderror"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        style="border-color: {{ $errors->has('description') ? '#ef4444' : '#d1d5db' }}"
                         placeholder="Deskripsi singkat tentang perusahaan"
                     >{{ old('description', $setting->description) }}</textarea>
                     @error('description')
@@ -249,7 +264,8 @@
                                 id="primary_color_text"
                                 name="primary_color"
                                 value="{{ old('primary_color', $setting->primary_color ?? '#3B82F6') }}"
-                                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('primary_color') border-red-500 @enderror"
+                                class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                style="border-color: {{ $errors->has('primary_color') ? '#ef4444' : '#d1d5db' }}"
                                 placeholder="#3B82F6"
                                 pattern="^#[0-9A-Fa-f]{6}$"
                             >
@@ -276,7 +292,8 @@
                                 id="secondary_color_text"
                                 name="secondary_color"
                                 value="{{ old('secondary_color', $setting->secondary_color ?? '#10B981') }}"
-                                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('secondary_color') border-red-500 @enderror"
+                                class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                style="border-color: {{ $errors->has('secondary_color') ? '#ef4444' : '#d1d5db' }}"
                                 placeholder="#10B981"
                                 pattern="^#[0-9A-Fa-f]{6}$"
                             >
@@ -303,16 +320,6 @@
                         Aktifkan Pengaturan Ini
                     </label>
                 </div>
-            </div>
-
-            <!-- Buttons -->
-            <div class="flex justify-end">
-                <button type="submit" class="btn-compact btn-primary">
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    {{ $isNew ? 'Simpan Pengaturan' : 'Perbarui Pengaturan' }}
-                </button>
             </div>
         </form>
     </div>

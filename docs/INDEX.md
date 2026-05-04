@@ -54,5 +54,6 @@ Dokumen ini menjadi titik masuk untuk membaca seluruh dokumentasi AWALAN. Gunaka
 - Setup dan instalasi lokal
 - Konvensi development proyek
 - Dokumentasi modul Company Settings
+- Branding AWALAN + referensi tech stack terbaru (Laravel 12, Vite 6)
 
 Jika ada modul baru yang ditambahkan ke boilerplate, indeks ini sebaiknya diperbarui agar navigasi dokumentasi tetap konsisten.

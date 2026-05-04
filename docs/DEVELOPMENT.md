@@ -1,5 +1,20 @@
 # AWALAN Project - Development Guide
 
+## Project Profile
+
+AWALAN adalah Laravel 12 boilerplate untuk admin panel dan starter kit project internal dengan fondasi authentication, RBAC, user management, menu management, company settings, serta service layer.
+
+## Tech Stack (Current)
+
+| Area | Stack |
+|------|-------|
+| Backend | PHP 8.2+, Laravel 12 |
+| Frontend | Blade, Tailwind CSS 3, Vite 6, Axios |
+| UI Utility | KTUI, Tabler Icons |
+| Authentication | Laravel Sanctum |
+| Authorization | Spatie Laravel Permission |
+| Testing | PHPUnit 11 |
+
 ## Getting Started
 
 Selamat datang di project AWALAN. Ikuti langkah-langkah berikut untuk memulai development.
@@ -26,8 +41,8 @@ php artisan serve
 ```
 
 Default login:
-- Admin: `admin@awalan.local` / `password`
-- User: `user@awalan.local` / `password`
+- Admin: `admin@mail.id` / `password`
+- User: `user@mail.id` / `password`
 
 ## Struktur Project
 
@@ -333,7 +348,7 @@ Check `.env` file, pastikan DB_* sudah benar
 
 ## Resources
 
-- 📚 [Laravel Docs](https://laravel.com/docs/11.x)
+- 📚 [Laravel Docs](https://laravel.com/docs/12.x)
 - 🎨 [Tailwind CSS](https://tailwindcss.com/docs)
 - 🔐 [Spatie Permission](https://spatie.be/docs/laravel-permission)
 - 📖 [Copilot Instructions](.github/copilot-instructions.md)

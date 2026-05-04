@@ -1,5 +1,20 @@
 # AWALAN Project Setup Guide
 
+## Project Profile
+
+AWALAN adalah Laravel 12 boilerplate untuk admin panel internal dengan fondasi autentikasi, role-permission, user management, menu management, company settings, dan service layer.
+
+## Tech Stack (Current)
+
+| Area | Stack |
+|------|-------|
+| Backend | PHP 8.2+, Laravel 12 |
+| Frontend | Blade, Tailwind CSS 3, Vite 6, Axios |
+| UI Utility | KTUI, Tabler Icons |
+| Authentication | Laravel Sanctum |
+| Authorization | Spatie Laravel Permission |
+| Testing | PHPUnit 11 |
+
 ## Prerequisites Installation
 
 ### 1. Install PHP 8.2+
@@ -87,8 +102,8 @@ php artisan db:seed
 ```
 
 This will create:
-- Admin user: `admin@awalan.local` / `password`
-- Regular user: `user@awalan.local` / `password`
+- Admin user: `admin@mail.id` / `password`
+- Regular user: `user@mail.id` / `password`
 
 ### Step 6: Build Frontend Assets
 
@@ -128,16 +143,16 @@ Visit: http://localhost:8000
 
 1. **Home Page**: http://localhost:8000
 2. **Login Page**: http://localhost:8000/login
-3. **Dashboard**: http://localhost:8000/dashboard (after login)
+3. **Dashboard**: http://localhost:8000/admin/dashboard (after login)
 
 ### Default Login Credentials
 
 **Administrator:**
-- Email: `admin@awalan.local`
+- Email: `admin@mail.id`
 - Password: `password`
 
 **Regular User:**
-- Email: `user@awalan.local`
+- Email: `user@mail.id`
 - Password: `password`
 
 ## Development Workflow
@@ -333,10 +348,10 @@ Use the provided `nginx.conf.example` or configure Apache accordingly.
 
 ## Additional Resources
 
-- [Laravel Documentation](https://laravel.com/docs/11.x)
+- [Laravel Documentation](https://laravel.com/docs/12.x)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Spatie Permission Documentation](https://spatie.be/docs/laravel-permission)
-- [Laravel Sanctum Documentation](https://laravel.com/docs/11.x/sanctum)
+- [Laravel Sanctum Documentation](https://laravel.com/docs/12.x/sanctum)
 
 ## Support
 

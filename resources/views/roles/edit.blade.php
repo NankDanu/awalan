@@ -1,15 +1,24 @@
-<x-layouts.admin :title="'Edit Role: ' . $role->name" :pageTitle="'Edit Role'">
-    <div class="max-w-3xl">
+<x-layouts.admin :title="'Edit Role: ' . $role->name" :pageTitle="'Edit Role'" :showComments="false">
+    <x-slot:toolbarActions>
+        <button type="submit" form="edit-role-form" class="btn-compact btn-primary">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Perbarui
+        </button>
+        <a href="{{ route('roles.index') }}" class="btn-compact btn-secondary">Batal</a>
+    </x-slot:toolbarActions>
+
+    <div class="max-w-3xl mx-auto">
         <div class="card-compact card-pad-compact">
-            <form action="{{ route('roles.update', $role->id) }}" method="POST" class="space-y-4">
+            <form id="edit-role-form" action="{{ route('roles.update', $role->id) }}" method="POST" class="space-y-4">
                 @csrf
                 @method('PUT')
 
                 <div>
                     <label for="name" class="label-compact">Nama Role</label>
-                    <input type="text" id="name" name="name" value="{{ old('name', $role->name) }}"
-                           class="input-compact @error('name') border-red-500 @enderror"
-                           placeholder="Masukkan nama role" required>
+                        <x-forms.input type="text" id="name" name="name" :value="old('name', $role->name)"
+                            error="name" placeholder="Masukkan nama role" required />
                     @error('name')
                         <span class="block text-xs text-red-600 mt-1">{{ $message }}</span>
                     @enderror
@@ -30,16 +39,6 @@
                     @error('permissions')
                         <span class="block text-xs text-red-600 mt-1">{{ $message }}</span>
                     @enderror
-                </div>
-
-                <div class="flex gap-3 border-t border-gray-200 pt-4">
-                    <button type="submit" class="btn-compact btn-primary">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Perbarui
-                    </button>
-                    <a href="{{ route('roles.index') }}" class="btn-compact btn-secondary">Batal</a>
                 </div>
             </form>
         </div>

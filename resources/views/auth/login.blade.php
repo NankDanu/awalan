@@ -4,127 +4,77 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Login - {{ company_name() ?? config('app.name', 'AWALAN') }}</title>
+    <title>Login - {{ config('app.name', 'AWALAN') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased bg-gray-50">
-    <div class="min-h-screen flex">
-        <!-- Left Side - Background Image -->
-        @php
-            $companyName = company_name() ?? config('app.name', 'AWALAN');
-            $appName = config('app.name', 'AWALAN');
-            $appVersion = config('app.version', '1.0.0');
-            $loginBackground = company_login_background();
-            $defaultLoginBackground = asset('images/background/afif-ramdhasuma-KvMw3jKXNZE-unsplash.jpg');
-            $backgroundImage = $loginBackground ?: $defaultLoginBackground;
-            $usesDefaultLoginBackground = blank($loginBackground);
-            $companyLogo = company_logo();
-        @endphp
-        <div class="hidden lg:flex lg:w-3/5 relative overflow-hidden"
-             style="background-image: url('{{ $backgroundImage }}'); background-size: cover; background-position: center;">
-            <!-- Logo aplikasi di kiri atas -->
-            <div class="absolute top-6 left-6 z-10">
-                <div class="flex items-center space-x-3">
-                    @if ($companyLogo)
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden">
-                            <img src="{{ $companyLogo }}" alt="{{ $companyName }}" class="w-full h-full object-cover">
+<body class="min-h-screen bg-stone-50 text-slate-900 antialiased">
+    @php
+        $appName = config('app.name', 'AWALAN');
+        $companyName = company_name();
+        $companyLogo = company_logo();
+        $illustrationPath = asset('images/hand-drawn-essay.png');
+    @endphp
+
+    <div class="min-h-screen lg:grid lg:grid-cols-[minmax(0,480px)_1fr]">
+        <section class="flex min-h-screen items-center px-6 py-10 sm:px-10 lg:px-12 xl:px-16">
+            <div class="mx-auto w-full max-w-md">
+                <div class="mb-10">
+                    <div class="mb-6 flex items-center gap-4">
+                        @if ($companyLogo)
+                            <div class="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+                                <img src="{{ $companyLogo }}" alt="{{ $appName }}" class="h-full w-full object-cover">
+                            </div>
+                        @else
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500 text-white shadow-sm">
+                                <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6v12m6-6H6" />
+                                </svg>
+                            </div>
+                        @endif
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">AWALAN boilerplate</p>
+                            <h1 class="text-3xl font-extrabold tracking-tight text-slate-950">{{ $appName }}</h1>
                         </div>
-                    @else
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                            </svg>
-                        </div>
-                    @endif
-                    <div class="text-white">
-                        <div class="text-xl font-bold tracking-wide">{{ $appName }} <small>v{{ $appVersion }}</small></div>
-                        <div class="text-xs opacity-90">Laravel Boilerplate</div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-            </div>
-
-            @if ($usesDefaultLoginBackground)
-                <div class="absolute bottom-4 left-6 right-6 z-10">
-                    <p class="inline-block rounded bg-black/40 px-3 py-1.5 text-[10px] leading-relaxed text-white/80 backdrop-blur-sm">
-                        Photo by <a href="https://unsplash.com/@javaistan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">Afif Ramdhasuma</a> on <a href="https://unsplash.com/photos/an-aerial-view-of-a-city-at-night-KvMw3jKXNZE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">Unsplash</a>
+                    <h2 class="text-2xl font-bold tracking-tight text-slate-950">Masuk ke workspace Anda</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">
+                        Kelola catatan dan pekerjaan harian dalam satu tempat yang ringkas.
+                        @if (filled($companyName))
+                            <span class="block text-slate-500">Terhubung ke {{ $companyName }}.</span>
+                        @endif
                     </p>
                 </div>
-            @endif
 
-            <!-- Center Content -->
-            <div class="relative z-10 flex items-center justify-center w-full p-10">
-                <div class="text-center text-white">
-                    <!-- Building Placeholder -->
-                    {{-- <div class="mb-6 max-w-lg mx-auto">
-                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                            <svg class="w-40 h-40 mx-auto text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h1 class="text-3xl font-semibold mb-3">Selamat Datang</h1>
-                    <p class="text-base text-blue-100">{{ $companyName }}</p> --}}
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Side - Login Form -->
-        <div class="flex-1 flex items-center justify-center p-6 lg:w-2/5">
-            <div class="w-full max-w-sm">
-                <!-- Logo Area -->
-                <div class="text-center mb-6">
-                    @if ($companyLogo)
-                        <div class="inline-flex items-center justify-center w-20 h-20 mb-4 rounded-full overflow-hidden bg-white shadow-sm">
-                            <img src="{{ $companyLogo }}" alt="{{ $companyName }}" class="w-full h-full object-cover">
-                        </div>
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-1">{{ $companyName }}</h2>
-                    @else
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-1">{{ $companyName }}</h2>
-                    @endif
-
-                    <p class="text-xs text-gray-600">Portal Login</p>
-                </div>
-
-                <!-- Login Form -->
-                <form action="{{ route('login.submit') }}" method="POST" class="space-y-4">
+                <form action="{{ route('login.submit') }}" method="POST" class="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
                     @csrf
 
-                    <!-- Email/Username Field -->
                     <div>
-                        <label for="email" class="label-compact">
-                            Email atau Username
-                        </label>
-                        <input 
-                            id="email" 
-                            name="email" 
-                            type="text" 
-                            required 
-                            value="{{ old('email') }}"
-                            class="input-compact @error('email') border-red-500 @enderror"
-                            placeholder="Masukkan email atau username Anda">
+                        <label for="email" class="label-compact">Email atau Username</label>
+                        <x-forms.input
+                            id="email"
+                            name="email"
+                            type="text"
+                            required
+                            :value="old('email')"
+                            error="email"
+                            placeholder="Masukkan email atau username Anda" />
                         @error('email')
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    <!-- Password Field -->
                     <div>
-                        <label for="password" class="label-compact">
-                            Password
-                        </label>
+                        <label for="password" class="label-compact">Password</label>
                         <div class="relative">
-                            <input 
-                                id="password" 
-                                name="password" 
-                                type="password" 
+                            <x-forms.input
+                                id="password"
+                                name="password"
+                                type="password"
                                 required
-                                class="input-compact pr-10 @error('password') border-red-500 @enderror"
-                                placeholder="••••••••">
+                                class="pr-10"
+                                error="password"
+                                placeholder="••••••••" />
                             <button 
                                 type="button" 
                                 onclick="togglePassword()"
@@ -140,7 +90,6 @@
                         @enderror
                     </div>
 
-                    <!-- Remember & Forgot Password -->
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <input 
@@ -160,7 +109,6 @@
                         </div>
                     </div>
 
-                    <!-- Login Button -->
                     <div>
                         <button 
                             type="submit" 
@@ -170,15 +118,24 @@
                     </div>
                 </form>
 
-                <!-- Footer -->
-                <div class="mt-6 text-center text-xs text-gray-600">
-                    <p>
-                        Diracik santai oleh <a href="https://github.com/NankDanu" class="font-medium text-blue-600 hover:text-blue-500">Nank</a>, bersama AI dan kopi <span class="text-amber-700">☕</span>
-                    </p>
-                    <p class="mt-1">Dari Cikarang, dengan ❤️</p>
+                <div class="mt-6 px-1 text-sm text-slate-500">
+                    <p>Gunakan akun yang sudah terdaftar untuk masuk ke dashboard AWALAN.</p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <aside class="hidden border-l border-slate-200 bg-white lg:flex lg:min-h-screen lg:flex-col lg:justify-between">
+            <div class="flex flex-1 items-center justify-center px-10 py-12 xl:px-16">
+                <div class="w-full max-w-2xl">
+                    <img src="{{ $illustrationPath }}" alt="Ilustrasi menulis untuk halaman login AWALAN" class="mx-auto w-full max-w-xl object-contain">
+                </div>
+            </div>
+            <div class="px-8 pb-8 xl:px-12">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-[11px] leading-5 text-slate-500">
+                    Illustration credit: <a href="https://www.freepik.com/free-vector/hand-drawn-essay-illustration_40126594.htm#fromView=image_search_similar&page=1&position=0&uuid=e5c2348d-7ba4-46d1-9732-76d79d09d57d&query=writer" target="_blank" rel="noopener noreferrer" class="font-semibold text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-slate-900">Hand-drawn essay illustration by Freepik</a>
+                </div>
+            </div>
+        </aside>
     </div>
 
     <script>

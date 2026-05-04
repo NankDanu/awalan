@@ -1,4 +1,9 @@
-<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'">
+<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showComments="false">
+    <x-slot:toolbarActions>
+        <a href="{{ route('company-settings.index') }}" class="kt-btn kt-btn-outline">Batal</a>
+        <button type="submit" form="company-settings-edit-form" class="kt-btn">Perbarui Pengaturan</button>
+    </x-slot:toolbarActions>
+
     <div class="grid w-full space-y-5">
         <div>
             <h1 class="text-lg font-semibold text-foreground">Edit Pengaturan Perusahaan</h1>
@@ -20,7 +25,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('company-settings.update', $companySetting) }}" enctype="multipart/form-data" class="space-y-5">
+        <form id="company-settings-edit-form" method="POST" action="{{ route('company-settings.update', $companySetting) }}" enctype="multipart/form-data" class="space-y-5">
             @csrf
             @method('PUT')
 
@@ -277,15 +282,6 @@
                         <span class="text-sm text-foreground">Aktifkan Pengaturan Ini</span>
                     </label>
                 </div>
-            </div>
-
-            <div class="flex items-center justify-between gap-3">
-                <a href="{{ route('company-settings.index') }}" class="kt-btn kt-btn-outline">
-                    Batal
-                </a>
-                <button type="submit" class="kt-btn">
-                    Perbarui Pengaturan
-                </button>
             </div>
         </form>
     </div>

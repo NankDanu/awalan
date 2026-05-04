@@ -7,6 +7,11 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Catat\ArchiveController as CatatArchiveController;
+use App\Http\Controllers\Catat\ClientController as CatatClientController;
+use App\Http\Controllers\Catat\LeadController as CatatLeadController;
+use App\Http\Controllers\Catat\NodeController as CatatNodeController;
+use App\Http\Controllers\Catat\WorkspaceController as CatatWorkspaceController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [HomeController::class, 'index']);
@@ -52,5 +57,51 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/company-settings', [CompanySettingController::class, 'index'])->name('company-settings.index');
     Route::post('/company-settings', [CompanySettingController::class, 'store'])->name('company-settings.store');
     Route::put('/company-settings', [CompanySettingController::class, 'update'])->name('company-settings.update');
+});
+
+Route::prefix('catat')->name('catat.')->middleware(['auth'])->group(function () {
+    Route::resource('clients', CatatClientController::class)->whereUuid('client');
+
+    Route::get('workspaces/{workspace}/empty', [CatatWorkspaceController::class, 'empty'])
+        ->name('workspaces.empty')
+        ->whereUuid('workspace');
+    Route::resource('workspaces', CatatWorkspaceController::class)
+        ->whereUuid('workspace');
+
+    Route::prefix('archive')->name('archive.')->group(function () {
+        Route::get('/', [CatatArchiveController::class, 'index'])->name('index');
+        Route::get('{workspace}', [CatatArchiveController::class, 'show'])
+            ->name('show')
+            ->whereUuid('workspace');
+        Route::post('{workspace}/restore', [CatatArchiveController::class, 'restore'])
+            ->name('restore')
+            ->whereUuid('workspace');
+    });
+
+    Route::prefix('leads')->name('leads.')->group(function () {
+        Route::get('/', [CatatLeadController::class, 'index'])->name('index');
+    });
+
+    Route::prefix('workspaces/{workspace}')->name('workspaces.')->whereUuid('workspace')->group(function () {
+        Route::get('links', [CatatWorkspaceController::class, 'links'])
+            ->name('links');
+        Route::get('nodes/{node}', [CatatNodeController::class, 'show'])
+            ->name('nodes.show')
+            ->whereUuid('node');
+        Route::post('nodes', [CatatNodeController::class, 'store'])
+            ->name('nodes.store');
+        Route::put('nodes/{node}/link', [CatatNodeController::class, 'updateLink'])
+            ->name('nodes.update_link')
+            ->whereUuid('node');
+        Route::put('nodes/{node}', [CatatNodeController::class, 'update'])
+            ->name('nodes.update')
+            ->whereUuid('node');
+        Route::delete('nodes/{node}', [CatatNodeController::class, 'destroy'])
+            ->name('nodes.destroy')
+            ->whereUuid('node');
+        Route::post('nodes/{node}/move', [CatatNodeController::class, 'move'])
+            ->name('nodes.move')
+            ->whereUuid('node');
+    });
 });
 

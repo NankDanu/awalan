@@ -1,5 +1,17 @@
-<x-layouts.admin :title="'Profil Saya'" :pageTitle="'Profil Saya'">
-    <div class="max-w-3xl">
+<x-layouts.admin :title="'Profil Saya'" :pageTitle="'Profil Saya'" :showComments="false">
+    <x-slot:toolbarActions>
+        <a href="{{ route('profile.edit') }}" class="btn-compact btn-primary">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+            Edit Profil
+        </a>
+        <a href="{{ route('profile.editPassword') }}" class="btn-compact btn-secondary text-xs">
+            Ubah Kata Sandi
+        </a>
+    </x-slot:toolbarActions>
+
+    <div class="max-w-3xl mx-auto">
         <!-- Profile Header Card -->
         <div class="card-compact mb-4">
             <div class="card-pad-compact">
@@ -22,12 +34,6 @@
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route('profile.edit') }}" class="btn-compact btn-primary">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                        </svg>
-                        Edit Profil
-                    </a>
                 </div>
             </div>
         </div>
@@ -123,9 +129,6 @@
                         <p class="text-sm font-medium text-gray-900">Kata Sandi</p>
                         <p class="text-xs text-gray-600">Ubah kata sandi akun Anda secara berkala</p>
                     </div>
-                    <a href="{{ route('profile.editPassword') }}" class="btn-compact btn-secondary text-xs">
-                        Ubah Kata Sandi
-                    </a>
                 </div>
             </div>
         </div>
