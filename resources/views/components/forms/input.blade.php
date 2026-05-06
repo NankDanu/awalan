@@ -6,5 +6,5 @@
 
 <input {{ $attributes->class([
     $baseClass,
-    $errorClass => filled($error) && $errors->has($error),
+    $errorClass => filled($error) && isset($errors) && $errors->has($error),
 ]) }}>
