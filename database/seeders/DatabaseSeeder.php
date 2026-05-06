@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Menu;
 use App\Models\User;
-use Database\Seeders\Catat\CtDatabaseSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -175,8 +174,5 @@ class DatabaseSeeder extends Seeder
 
         // Seed company settings
         $this->call(CompanySettingSeeder::class);
-
-        // Seed Catat module
-        $this->call(CtDatabaseSeeder::class);
     }
 }

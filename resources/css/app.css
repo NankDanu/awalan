@@ -304,7 +304,7 @@
     }
 
     .catat_main {
-        @apply flex-1 min-w-0 flex flex-col;
+        @apply flex-1 min-w-0 min-h-0 flex flex-col;
     }
 
     .catat_topbar {
@@ -336,7 +336,7 @@
     }
 
     .catat_content {
-        @apply overflow-y-auto p-3 sm:p-4 lg:p-6;
+        @apply min-h-0 overflow-y-auto p-3 sm:p-4 lg:p-6;
     }
 
     .catat_document {

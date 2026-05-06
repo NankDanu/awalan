@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $title ?? config('app.name', 'AWALAN') }}</title>
+    <title>{{ $title ?? config('base.app_name', 'AWALAN') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('images/apps_dasbor.png') }}">
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/apps_dasbor.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
             <div class="catat_brand">
                 <a href="{{ route('dashboard') }}" class="flex items-center gap-2" :class="sidebarCollapsed ? 'justify-center w-full' : ''">
                     <span class="catat_brand_icon" aria-hidden="true">
-                        <i class="ti ti-ballpen"></i>
+                        <i class="ti ti-apps"></i>
                     </span>
                     <span class="catat_logo" x-show="!sidebarCollapsed" x-cloak>AWALAN</span>
                 </a>
@@ -142,11 +142,11 @@
 
             <div @class([
                 'catat_content_wrap' => $showComments,
-                'flex-1 min-h-0' => ! $showComments,
+                'flex flex-1 min-h-0 flex-col' => ! $showComments,
             ])>
                 <main @class([
                     'catat_content',
-                    'w-full' => ! $showComments,
+                    'w-full flex-1 min-h-0' => ! $showComments,
                 ])>
                     @if (session('success'))
                         <div class="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800" role="alert">{{ session('success') }}</div>

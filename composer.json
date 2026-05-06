@@ -1,7 +1,7 @@
 {
-    "name": "awalan/awalan",
-    "type": "project",
-    "description": "Laravel 12 boilerplate and admin panel starter kit with authentication, RBAC, user management, menu management, and company settings",
+    "name": "org/laravel-base",
+    "type": "library",
+    "description": "Base Laravel composer package for reusable client projects",
     "keywords": [
         "laravel",
         "laravel 12",
@@ -30,14 +30,14 @@
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
-        "laravel/sail": "^1.28",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^10.0",
         "phpunit/phpunit": "^11.0",
         "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {
         "psr-4": {
+            "Org\\Base\\": "src/",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
@@ -51,24 +51,12 @@
             "Tests\\": "tests/"
         }
     },
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
-    },
+    "scripts": {},
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "providers": [
+                "Org\\Base\\Providers\\BaseServiceProvider"
+            ]
         }
     },
     "config": {
