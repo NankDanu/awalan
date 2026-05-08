@@ -6,7 +6,7 @@
             </svg>
             Edit Profil
         </a>
-        <a href="{{ route('profile.editPassword') }}" class="btn-compact btn-secondary text-xs">
+        <a href="{{ route('profile.editPassword') }}" class="btn-compact btn-secondary">
             Ubah Kata Sandi
         </a>
     </x-slot:toolbarActions>

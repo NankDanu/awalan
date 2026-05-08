@@ -1,7 +1,7 @@
 <x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showWidget="false">
     <x-slot:toolbarActions>
-        <a href="{{ route('company-settings.index') }}" class="kt-btn kt-btn-outline">Batal</a>
-        <button type="submit" form="company-settings-edit-form" class="kt-btn">Perbarui Pengaturan</button>
+        <a href="{{ route('company-settings.index') }}" class="btn-compact btn-secondary">Batal</a>
+        <button type="submit" form="company-settings-edit-form" class="btn-compact btn-primary">Perbarui Pengaturan</button>
     </x-slot:toolbarActions>
 
     <div class="grid w-full space-y-5">

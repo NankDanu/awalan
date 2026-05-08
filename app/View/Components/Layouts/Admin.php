@@ -40,9 +40,9 @@ class Admin extends Component
         $this->showWidget = $showWidget;
 
         $this->docToolbarActions = [
-            ['label' => 'Edit', 'style' => 'muted'],
-            ['label' => 'Read', 'style' => 'active'],
-            ['label' => 'Share', 'style' => 'muted'],
+            // ['label' => 'Edit', 'style' => 'muted'],
+            // ['label' => 'Read', 'style' => 'active'],
+            // ['label' => 'Share', 'style' => 'muted'],
         ];
 
         if ($user) {
