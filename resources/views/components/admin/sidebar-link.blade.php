@@ -1,7 +1,7 @@
 @props(['href', 'active' => false, 'icon' => 'default'])
 
 @php
-$baseClasses = 'catat_sidebar_link transition-colors';
+$baseClasses = 'base_sidebar_link transition-colors';
 $classes = $active 
     ? $baseClasses . ' is-active' 
     : $baseClasses;

@@ -5,7 +5,7 @@ import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import Quote from '@editorjs/quote';
 
-const editorConfig = window.CATAT_MARKDOWN_CONFIG || {};
+const editorConfig = window.base_MARKDOWN_CONFIG || {};
 const target = document.getElementById('content-md');
 const editorJsHolder = document.getElementById('editorjs-holder');
 const statusElement = document.getElementById('autosave-status');
