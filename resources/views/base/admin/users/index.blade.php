@@ -1,4 +1,4 @@
-<x-layouts.admin :title="'Manajemen Pengguna'" :pageTitle="'Daftar Pengguna'" :showComments="false">
+<x-layouts.admin :title="'Manajemen Pengguna'" :pageTitle="'Daftar Pengguna'" :showWidget="false">
     <x-slot:toolbarActions>
         @can('create-users')
             <a href="{{ route('users.create') }}" class="kt-btn">

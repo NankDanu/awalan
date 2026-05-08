@@ -1,4 +1,4 @@
-<x-layouts.admin :title="'Manajemen Role'" :pageTitle="'Daftar Role'" :showComments="false">
+<x-layouts.admin :title="'Manajemen Role'" :pageTitle="'Daftar Role'" :showWidget="false">
     <x-slot:toolbarActions>
         @can('create-roles')
             <a href="{{ route('roles.create') }}" class="kt-btn kt-btn-outline">

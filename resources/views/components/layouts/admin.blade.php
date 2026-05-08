@@ -1,5 +1,5 @@
 @props([
-    'showComments' => true,
+    'showWidget' => true,
 ])
 
 <!DOCTYPE html>
@@ -141,12 +141,12 @@
             </header>
 
             <div @class([
-                'catat_content_wrap' => $showComments,
-                'flex flex-1 min-h-0 flex-col' => ! $showComments,
+                'catat_content_wrap' => $showWidget,
+                'flex flex-1 min-h-0 flex-col' => ! $showWidget,
             ])>
                 <main @class([
                     'catat_content',
-                    'w-full flex-1 min-h-0' => ! $showComments,
+                    'w-full flex-1 min-h-0' => ! $showWidget,
                 ])>
                     @if (session('success'))
                         <div class="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800" role="alert">{{ session('success') }}</div>
@@ -169,7 +169,7 @@
                     </div>
                 </main>
 
-                @if ($showComments)
+                @if ($showWidget)
                     <aside class="catat_comments hidden xl:flex">
                         <div class="catat_comments_head">Comments</div>
                         @forelse ($docComments as $comment)

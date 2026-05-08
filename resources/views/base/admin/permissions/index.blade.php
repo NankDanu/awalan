@@ -1,4 +1,4 @@
-<x-layouts.admin :title="'Manajemen Permission'" :pageTitle="'Daftar Permission'" :showComments="false">
+<x-layouts.admin :title="'Manajemen Permission'" :pageTitle="'Daftar Permission'" :showWidget="false">
     <x-slot:toolbarActions>
         @can('create-permissions')
             <a href="{{ route('permissions.create') }}" class="kt-btn kt-btn-outline">

@@ -1,4 +1,4 @@
-<x-layouts.admin :title="'Tambah Permission'" :pageTitle="'Tambah Permission'" :showComments="false">
+<x-layouts.admin :title="'Tambah Permission'" :pageTitle="'Tambah Permission'" :showWidget="false">
     <x-slot:toolbarActions>
         <button type="submit" form="create-permission-form" class="btn-compact btn-primary">
             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

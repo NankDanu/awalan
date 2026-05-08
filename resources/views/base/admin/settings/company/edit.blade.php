@@ -1,4 +1,4 @@
-<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showComments="false">
+<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showWidget="false">
     <x-slot:toolbarActions>
         <a href="{{ route('company-settings.index') }}" class="kt-btn kt-btn-outline">Batal</a>
         <button type="submit" form="company-settings-edit-form" class="kt-btn">Perbarui Pengaturan</button>

@@ -65,7 +65,26 @@ resources/
 database/
 ├── migrations/          # Use table prefixes: mt_, tx_, cf_, sy_
 └── seeders/
+
+src/
+└── Modules/              # Placeholder resmi modul package (simpen .gitkeep)
+
+routes/
+└── modules/              # Placeholder route per modul (simpen .gitkeep)
+
+database/
+└── migrations/modules/   # Placeholder migration per modul (simpen .gitkeep)
+
+resources/
+└── views/modules/        # Placeholder view per modul (simpen .gitkeep)
+
+resources/
+└── views/_archive/       # Arsip/legacy view, bukan bagian runtime modul aktif
 ```
+
+Catatan struktur modul:
+- Folder placeholder modul resmi: `src/Modules`, `routes/modules`, `database/migrations/modules`, `resources/views/modules`.
+- Folder `resources/views/_archive` dipertahankan sebagai arsip referensi, tidak dipakai sebagai struktur modul aktif.
 
 ## Development Rules
 

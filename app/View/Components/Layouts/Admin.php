@@ -17,6 +17,8 @@ class Admin extends Component
      */
     public Collection $menus;
 
+    public bool $showWidget;
+
     /**
      * @var array<int, array<string, string>>
      */
@@ -30,10 +32,12 @@ class Admin extends Component
     public function __construct(
         public ?string $title = null,
         public ?string $pageTitle = null,
+        bool $showWidget = true,
         MenuService $menuService
     ) {
         $user = Auth::user();
         $this->menus = $user ? $menuService->getSidebarMenusForUser($user) : collect();
+        $this->showWidget = $showWidget;
 
         $this->docToolbarActions = [
             ['label' => 'Edit', 'style' => 'muted'],

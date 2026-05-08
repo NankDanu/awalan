@@ -1,4 +1,4 @@
-<x-layouts.admin :showComments="false">
+<x-layouts.admin :showWidget="false">
     <x-slot name="title">Dashboard Dummy - AWALAN</x-slot>
     <x-slot name="pageTitle">Dashboard - Dummy</x-slot>
 

@@ -1,4 +1,4 @@
-<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showComments="false">
+<x-layouts.admin :title="'Pengaturan Perusahaan'" :pageTitle="'Pengaturan Perusahaan'" :showWidget="false">
     <x-slot:toolbarActions>
         <button type="submit" form="company-settings-index-form" class="btn-compact btn-primary">
             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

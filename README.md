@@ -102,11 +102,30 @@ resources/
 ├── js/                   # Asset JavaScript
 └── views/                # Blade views
 
+src/
+└── Modules/              # Placeholder resmi modul package (simpen .gitkeep)
+
+routes/
+└── modules/              # Placeholder route per modul (simpen .gitkeep)
+
+database/
+└── migrations/modules/   # Placeholder migration per modul (simpen .gitkeep)
+
+resources/
+└── views/modules/        # Placeholder view per modul (simpen .gitkeep)
+
+resources/
+└── views/_archive/       # Arsip/legacy view, bukan bagian runtime modul aktif
+
 routes/
 ├── api.php               # API routes
 ├── console.php           # Console routes
 └── web.php               # Web routes
 ```
+
+Catatan struktur modul:
+- Folder placeholder modul resmi: `src/Modules`, `routes/modules`, `database/migrations/modules`, `resources/views/modules`.
+- Folder `resources/views/_archive` dipertahankan sebagai arsip referensi, tidak dipakai sebagai struktur modul aktif.
 
 ## Konvensi Tabel
 
