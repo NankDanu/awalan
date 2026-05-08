@@ -85,6 +85,10 @@
                     <div class="px-3 py-2 text-xs text-slate-500">Menu belum tersedia.</div>
                 @endforelse
             </nav>
+
+            <div class="mt-auto border-t border-slate-200 bg-slate-50 px-1 pt-3 pb-2 shrink-0">
+                <x-branding-footer mode="sidebar" />
+            </div>
         </aside>
 
         <div x-show="mobileOpen" @click="mobileOpen = false" class="fixed inset-0 z-20 bg-slate-900/40 lg:hidden" x-cloak></div>
@@ -192,6 +196,7 @@
                     </aside>
                 @endif
             </div>
+
         </div>
     </div>
 

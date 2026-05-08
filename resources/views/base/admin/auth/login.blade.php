@@ -116,6 +116,8 @@
                 <div class="mt-6 px-1 text-sm text-slate-500">
                     <p>Gunakan akun yang sudah terdaftar untuk masuk ke dashboard AWALAN.</p>
                 </div>
+
+                <x-branding-footer />
             </div>
         </section>
 
