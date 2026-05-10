@@ -41,4 +41,28 @@ final class MenuManager
     {
         self::$items = [];
     }
+
+    /**
+     * Collect all unique permission strings declared by registered menus.
+     *
+     * @return array<int, string>
+     */
+    public static function permissions(): array
+    {
+        $perms = [];
+
+        foreach (self::$items as $item) {
+            if (! empty($item['permission'])) {
+                $perms[] = $item['permission'];
+            }
+
+            foreach ($item['children'] as $child) {
+                if (! empty($child['permission'])) {
+                    $perms[] = $child['permission'];
+                }
+            }
+        }
+
+        return array_values(array_unique($perms));
+    }
 }

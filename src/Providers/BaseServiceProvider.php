@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Nank\Awalan\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Nank\Awalan\Console\Commands\MenuInstallCommand;
 use Nank\Awalan\Menu\MenuManager;
 
 class BaseServiceProvider extends ServiceProvider
@@ -33,6 +34,10 @@ class BaseServiceProvider extends ServiceProvider
         ]);
 
         if ($this->app->runningInConsole()) {
+            $this->commands([
+                MenuInstallCommand::class,
+            ]);
+
             $this->publishes([
                 __DIR__ . '/../../config/base.php' => config_path('base.php'),
             ], 'base-config');
