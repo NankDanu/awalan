@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Models;
+namespace Nank\Awalan\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

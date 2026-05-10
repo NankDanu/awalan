@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Providers;
+namespace Nank\Awalan\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Org\Base\Menu\MenuManager;
+use Nank\Awalan\Menu\MenuManager;
 
 class BaseServiceProvider extends ServiceProvider
 {

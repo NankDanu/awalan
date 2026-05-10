@@ -2,5 +2,5 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    Org\Base\Providers\BaseServiceProvider::class,
+    Nank\Awalan\Providers\BaseServiceProvider::class,
 ];

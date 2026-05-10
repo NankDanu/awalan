@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Menu;
+namespace Nank\Awalan\Menu;
 
 final class MenuManager
 {

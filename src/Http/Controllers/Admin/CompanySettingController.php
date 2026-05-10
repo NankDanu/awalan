@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Http\Controllers\Admin;
+namespace Nank\Awalan\Http\Controllers\Admin;
 
-use Org\Base\Http\Requests\StoreCompanySettingRequest;
-use Org\Base\Http\Requests\UpdateCompanySettingRequest;
-use Org\Base\Models\CompanySetting;
-use Org\Base\Services\CompanySettingService;
+use Nank\Awalan\Http\Requests\StoreCompanySettingRequest;
+use Nank\Awalan\Http\Requests\UpdateCompanySettingRequest;
+use Nank\Awalan\Models\CompanySetting;
+use Nank\Awalan\Services\CompanySettingService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;

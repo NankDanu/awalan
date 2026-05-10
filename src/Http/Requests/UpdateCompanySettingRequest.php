@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Http\Requests;
+namespace Nank\Awalan\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Org\Base\Models\CompanySetting;
+use Nank\Awalan\Models\CompanySetting;
 
 class UpdateCompanySettingRequest extends FormRequest
 {

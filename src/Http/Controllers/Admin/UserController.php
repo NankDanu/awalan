@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Http\Controllers\Admin;
+namespace Nank\Awalan\Http\Controllers\Admin;
 
-use Org\Base\Http\Requests\StoreUserRequest;
-use Org\Base\Http\Requests\UpdateUserRequest;
-use Org\Base\Models\User;
-use Org\Base\Services\UserService;
+use Nank\Awalan\Http\Requests\StoreUserRequest;
+use Nank\Awalan\Http\Requests\UpdateUserRequest;
+use Nank\Awalan\Models\User;
+use Nank\Awalan\Services\UserService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

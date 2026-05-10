@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Http\Controllers\Admin;
+namespace Nank\Awalan\Http\Controllers\Admin;
 
-use Org\Base\Http\Requests\StorePermissionRequest;
-use Org\Base\Http\Requests\UpdatePermissionRequest;
-use Org\Base\Services\PermissionService;
+use Nank\Awalan\Http\Requests\StorePermissionRequest;
+use Nank\Awalan\Http\Requests\UpdatePermissionRequest;
+use Nank\Awalan\Services\PermissionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

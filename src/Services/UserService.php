@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Services;
+namespace Nank\Awalan\Services;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Org\Base\Models\User;
+use Nank\Awalan\Models\User;
 use Spatie\Permission\Models\Role;
 
 class UserService

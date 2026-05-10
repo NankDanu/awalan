@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Services;
+namespace Nank\Awalan\Services;
 
 use Illuminate\Support\Collection;
-use Org\Base\Models\Menu;
-use Org\Base\Models\User;
+use Nank\Awalan\Models\Menu;
+use Nank\Awalan\Models\User;
 
 class MenuService
 {

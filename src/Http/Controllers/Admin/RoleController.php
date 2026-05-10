@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Http\Controllers\Admin;
+namespace Nank\Awalan\Http\Controllers\Admin;
 
-use Org\Base\Http\Requests\StoreRoleRequest;
-use Org\Base\Http\Requests\UpdateRoleRequest;
-use Org\Base\Services\RoleService;
+use Nank\Awalan\Http\Requests\StoreRoleRequest;
+use Nank\Awalan\Http\Requests\UpdateRoleRequest;
+use Nank\Awalan\Services\RoleService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Services;
+namespace Nank\Awalan\Services;
 
 use Illuminate\Support\Facades\Auth;
 

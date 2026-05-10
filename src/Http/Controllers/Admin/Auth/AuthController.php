@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Org\Base\Http\Controllers\Admin\Auth;
+namespace Nank\Awalan\Http\Controllers\Admin\Auth;
 
-use Org\Base\Http\Requests\Auth\LoginRequest;
-use Org\Base\Services\AuthService;
+use Nank\Awalan\Http\Requests\Auth\LoginRequest;
+use Nank\Awalan\Services\AuthService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
