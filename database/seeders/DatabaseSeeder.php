@@ -120,15 +120,6 @@ class DatabaseSeeder extends Seeder
             'is_active' => true,
         ]);
 
-        Menu::whereIn('name', [
-            'Kategori Produk',
-            'Produk',
-        ])
-            ->delete();
-
-        Menu::whereIn('name', ['Manajemen', 'Transaksi'])
-            ->whereNull('parent_id')
-            ->delete();
 
         // Settings Menu
         $settingsMenu = Menu::firstOrCreate([

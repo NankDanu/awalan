@@ -15,10 +15,10 @@ class CompanySettingSeeder extends Seeder
         CompanySetting::firstOrCreate(
             ['company_name' => 'AWALAN'],
             [
-                'address' => 'Jl. Raya Besar No. 1, Bekasi Kabupaten, Jawa Barat, Indonesia',
+                'address' => 'Jl. Kaki Pegel Sekali No. 1, Bekasi Kabupaten, Jawa Barat, Indonesia',
                 'phone' => '+62 21 1234 5678',
                 'email' => 'info@mail.id',
-                'website' => 'https://perusahaan.id',
+                'website' => 'https://perusahaanmu.id',
                 'description' => 'Starter aplikasi AWALAN.',
                 'logo' => null,
                 'favicon' => null,
