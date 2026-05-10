@@ -175,5 +175,5 @@ MIT License
 
 ---
 
-*Diracik santai oleh Nank, bersama AI dan kopi ☕ dari Cikarang, dengan ❤️*
+*Diracik santai oleh [https://github.com/NankDanu](Nank), bersama AI dan kopi ☕ dari Cikarang, dengan setengah ❤️*
 
