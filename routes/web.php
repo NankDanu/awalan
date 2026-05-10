@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Org\Base\Http\Controllers\Admin\Auth\AuthController;
-use Org\Base\Http\Controllers\Admin\CompanySettingController;
-use Org\Base\Http\Controllers\Admin\DashboardController;
-use Org\Base\Http\Controllers\Admin\PermissionController;
-use Org\Base\Http\Controllers\Admin\ProfileController;
-use Org\Base\Http\Controllers\Admin\RoleController;
-use Org\Base\Http\Controllers\Admin\UserController;
+use Nank\Awalan\Http\Controllers\Admin\Auth\AuthController;
+use Nank\Awalan\Http\Controllers\Admin\CompanySettingController;
+use Nank\Awalan\Controllers\Admin\DashboardController;
+use Nank\Awalan\Http\Controllers\Admin\PermissionController;
+use Nank\Awalan\Http\Controllers\Admin\ProfileController;
+use Nank\Awalan\Http\Controllers\Admin\RoleController;
+use Nank\Awalan\Http\Controllers\Admin\UserController;
 
 Route::middleware('web')->group(function () {
     // Route::get('/', [HomeController::class, 'index']);

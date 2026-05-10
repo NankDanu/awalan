@@ -33,6 +33,7 @@
     29 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     30 => 'Spatie\\Permission\\PermissionServiceProvider',
     31 => 'App\\Providers\\AppServiceProvider',
+    32 => 'Nank\\Awalan\\Providers\\BaseServiceProvider',
   ),
   'eager' => 
   array (
@@ -53,6 +54,7 @@
     14 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     15 => 'Spatie\\Permission\\PermissionServiceProvider',
     16 => 'App\\Providers\\AppServiceProvider',
+    17 => 'Nank\\Awalan\\Providers\\BaseServiceProvider',
   ),
   'deferred' => 
   array (
