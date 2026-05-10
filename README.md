@@ -1,10 +1,39 @@
-# AWALAN
+# AWALAN — Laravel Boilerplate · Admin Panel Starter Kit
 
 [![Laravel](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-38bdf8.svg)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-AWALAN adalah `Laravel 12 boilerplate` untuk kebutuhan admin panel dan starter kit project baru. Repo ini disiapkan sebagai baseline aplikasi dengan autentikasi, otorisasi berbasis role-permission, user management, menu management, company settings, serta pola arsitektur service layer supaya tim bisa langsung lanjut ke fitur bisnis.
+Laravel boilerplate siap pakai untuk admin panel dan starter kit project baru. Dilengkapi autentikasi, otorisasi berbasis role-permission, user management, menu management, company settings, dan arsitektur service layer — supaya tim bisa langsung fokus ke fitur bisnis tanpa setup dari nol.
+
+Setiap project punya titik mulai, dan *awalan* adalah titik itu. Setiap project yang lahir dari *awalan* punya akar yang sama, tapi tumbuh ke arahnya sendiri.
+
+## Cocok Dipakai Untuk
+
+- Starter Laravel buat admin panel internal
+- Fondasi aplikasi yang sudah ada role dan permission
+- Template arsitektur service layer buat tim developer
+- Baseline project yang folder, helper, dan dokumentasinya sudah rapi dari awal
+
+## Fitur Bawaan
+
+- Authentication admin
+- Dashboard admin
+- Profile management
+- User management
+- Role management
+- Permission management
+- Company settings
+- Dynamic menu structure
+
+Modul-modul ini bisa dipakai sebagai referensi implementasi sekaligus titik start buat nambah fitur baru.
+
+## Preview
+
+### Login
+
+![Preview Dasbor](public/images/apps_login.png)
 
 ### Dasbor
 
@@ -33,23 +62,13 @@ AWALAN adalah `Laravel 12 boilerplate` untuk kebutuhan admin panel dan starter k
 | Testing | PHPUnit 11 |
 | Code Style | Laravel Pint |
 
-## Modul
-
-- Authentication admin
-- Dashboard admin
-- Profile management
-- User management
-- Role management
-- Permission management
-- Company settings
-- Dynamic menu structure
-- Modul contoh `Catat` (client/workspace/node)
-
-Modul-modul ini bisa dipakai sebagai referensi implementasi sekaligus titik start buat nambah fitur baru.
-
 ## Quick Start
 
 ```bash
+# Clone repository
+git clone https://github.com/NankDanu/awalan
+cd awalan
+
 # Install dependency
 composer install
 npm install
@@ -83,7 +102,7 @@ Endpoint utama:
 app/
 ├── Helpers/              # Helper global dan utilitas aplikasi
 ├── Http/
-│   ├── Controllers/      # Controller tipis untuk request/response
+│   ├── Controllers/      # Controller untuk request/response
 │   ├── Middleware/       # Middleware aplikasi
 │   └── Requests/         # Form request untuk validasi
 ├── Models/               # Eloquent models
@@ -103,7 +122,7 @@ resources/
 └── views/                # Blade views
 
 src/
-└── Modules/              # Placeholder resmi modul package (simpen .gitkeep)
+└── Modules/              # Placeholder untuk modul package (simpen .gitkeep)
 
 routes/
 └── modules/              # Placeholder route per modul (simpen .gitkeep)
@@ -131,52 +150,30 @@ Catatan struktur modul:
 
 AWALAN pakai prefix nama tabel buat ngebedain domain data:
 
-- `mt_` untuk master data
-- `tx_` untuk transaksi
-- `cf_` untuk konfigurasi
-- `sy_` untuk sistem
+| Prefix | Keterangan |
+|--------|-----------|
+| `mt_` | Master data |
+| `tx_` | Transaksi |
+| `cf_` | Konfigurasi |
+| `sy_` | Sistem |
 
-Contoh implementasi yang sudah ada:
-
-- `mt_users`
-- `mt_menus`
-- `cf_company_settings`
-- `sy_roles`
-- `sy_permissions`
-- `sy_sessions`
-
-## Dokumentasi
-
-Semua dokumentasi project ada di folder [docs](docs/). Kalau baru pertama kali buka project ini, paling aman mulai dari [docs/INDEX.md](docs/INDEX.md).
-
-## Penggunaan
-
-Project ini cocok dipakai kalau kamu butuh:
-
-- Starter Laravel buat admin panel internal
-- Fondasi aplikasi yang sudah ada role dan permission
-- Template arsitektur service layer buat tim developer
-- Baseline project yang folder, helper, dan dokumentasinya sudah rapi dari awal
-
-Hal yang biasanya dilakukan setelah clone boilerplate ini:
-
-1. Sesuaikan nama aplikasi dan environment.
-2. Cek modul bawaan mana yang mau dipakai, mana yang mau dibuang.
-3. Tambahkan migration dan service baru sesuai domain bisnis utama project.
-4. Sesuaikan menu, permission, dan seed data biar match sama kebutuhan aplikasi.
+Contoh implementasi yang sudah ada: `mt_users`, `mt_menus`, `cf_company_settings`, `sy_roles`, `sy_permissions`, `sy_sessions`.
 
 ## Development
 
-- Controller tetap tipis dan fokus ke alur request/response.
+- Controller tetap sederhana dan fokus ke alur request/response.
 - Business logic ditaruh di service layer.
 - Validasi pakai form request.
 - Akses data konfigurasi bisa dibantu lewat helper.
 - Side effect kayak cache invalidation di-handle lewat observer kalau memang perlu.
 
-Penjelasan yang lebih detail bisa langsung dilihat di [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+Penjelasan yang lebih detail bisa langsung dilihat di [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Semua dokumentasi project ada di folder [docs/](docs/) — mulai dari [docs/INDEX.md](docs/INDEX.md).
 
 ## Lisensi
 
 MIT License
 
-Kalau mau mulai baca dokumentasi, langsung buka [docs/INDEX.md](docs/INDEX.md).
+---
+
+*Diracik santai oleh Nank, bersama AI dan kopi ☕ dari Cikarang, dengan ❤️*
+
