@@ -55,7 +55,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Org\\Base\\Providers\\BaseServiceProvider"
+                "Nank\\Awalan\\Providers\\BaseServiceProvider"
             ]
         }
     },
