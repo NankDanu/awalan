@@ -1,7 +1,7 @@
 {
-    "name": "org/laravel-base",
+    "name": "awalan",
     "type": "library",
-    "description": "Base Laravel composer package for reusable client projects",
+    "description": "Laravel Boilerplate · Admin Panel Starter Kit",
     "keywords": [
         "laravel",
         "laravel 12",
