@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Nank\Awalan\Http\Controllers\Admin\Auth\AuthController;
 use Nank\Awalan\Http\Controllers\Admin\CompanySettingController;
-use Nank\Awalan\Controllers\Admin\DashboardController;
+use Nank\Awalan\Http\Controllers\Admin\DashboardController;
 use Nank\Awalan\Http\Controllers\Admin\PermissionController;
 use Nank\Awalan\Http\Controllers\Admin\ProfileController;
 use Nank\Awalan\Http\Controllers\Admin\RoleController;
