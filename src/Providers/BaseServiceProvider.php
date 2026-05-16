@@ -23,16 +23,6 @@ class BaseServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'base');
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
-        MenuManager::add([
-            'label' => 'Dashboard',
-            'icon' => 'heroicon-o-home',
-            'route' => 'dashboard',
-            'permission' => null,
-            'order' => 10,
-            'active' => ['dashboard'],
-            'children' => [],
-        ]);
-
         if ($this->app->runningInConsole()) {
             $this->commands([
                 MenuInstallCommand::class,
