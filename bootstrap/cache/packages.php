@@ -1,9 +1,9 @@
 <?php return array (
-  'laravel/sail' => 
+  'laravel/pail' => 
   array (
     'providers' => 
     array (
-      0 => 'Laravel\\Sail\\SailServiceProvider',
+      0 => 'Laravel\\Pail\\PailServiceProvider',
     ),
   ),
   'laravel/sanctum' => 
@@ -39,6 +39,20 @@
     'providers' => 
     array (
       0 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    ),
+  ),
+  'orchestra/canvas' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Orchestra\\Canvas\\LaravelServiceProvider',
+    ),
+  ),
+  'orchestra/canvas-core' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Orchestra\\Canvas\\Core\\LaravelServiceProvider',
     ),
   ),
   'spatie/laravel-ignition' => 
